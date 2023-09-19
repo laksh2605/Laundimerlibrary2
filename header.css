@@ -1,0 +1,68 @@
+.topMenu {
+    background-color: black;
+    text-align: right;
+    color: white;
+    height:40px;
+    }
+    .lowerMenu {
+    background-color: black;
+    text-align: left;
+    color: white;
+    height:40px;
+    }
+    .menubutton{
+        background-color: black;
+        color: white;
+        height:40px;
+        border: 2px solid black;
+    }
+    .menubutton1{
+        background-color: red;
+        color: white;
+        height:40px;
+        border: 2px solid red;
+    }
+    .middleBar {
+    background-color: #7A3E31;
+    text-align: left;
+    color: white;
+    height:80px;
+    }
+    .middleBarText{
+    color: white;
+    }
+    h1 { margin-top: 0;
+    padding-top: 20;
+    padding-left: 20; }
+
+    .atag{ margin-top: 0;
+        padding-top: 20;
+        padding-left: 20;}
+
+    .indexbutton1{margin-top: 0;
+        padding-top: 200;
+        padding-left: 500;}
+
+        .homepagebutton{
+            background-color: #7A3E31;
+            color: white;
+            height:60px;
+            width: 120px;
+            border: 2px solid #7A3E31;
+        }
+
+        .profilebuttoncss{
+            background-color: #7A3E31;
+            color: white;
+            height:100px;
+            width: 250px;
+            border: 2px solid #7A3E31;
+        }
+
+        .profilebutton1{margin-top: 0;
+            padding-top: 100;
+            padding-left: 300;}
+
+        .profilebutton2{margin-top: 0;
+            padding-top: 150;
+            padding-left: 300;}
