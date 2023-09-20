@@ -3,14 +3,14 @@
 include_once("connection.php");
 
 try {
-    $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+   // $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     $sql = "INSERT INTO tblbooks (ISBN, Title, Author, Genre, Description, Length, Rating, In_Library) 
             VALUES (:isbn, :title, :author, :genre, :description, :length, :rating, :in_library)";
     
-    $stmt = $dbh->prepare($sql);
+    $stmt = $conn->prepare($sql);
     
     $isbn = $_POST["ISBN"];
     $title = $_POST["Title"];
@@ -26,7 +26,7 @@ try {
     $stmt->bindParam(':author', $author, PDO::PARAM_STR);
     $stmt->bindParam(':genre', $genre, PDO::PARAM_STR);
     $stmt->bindParam(':description', $description, PDO::PARAM_STR);
-    $stmt->bindParam(':length', $length, PDO::PARAM_INT);
+    $stmt->bindParam(':length', $length, PDO::PARAM_INT);s
     $stmt->bindParam(':rating', $rating, PDO::PARAM_INT);
     $stmt->bindParam(':in_library', $in_library, PDO::PARAM_INT);
     
