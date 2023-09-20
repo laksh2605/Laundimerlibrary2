@@ -3,14 +3,14 @@
 include_once("connection.php");
 
 try {
-    $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     $sql = "INSERT INTO tblusers (surname, forename, username, password, Email_Address, UserRole)
             VALUES (:surname, :forename, :username, :password, :email, :userRole)";
     
-    $stmt = $dbh->prepare($sql);
+    $stmt = $conn->prepare($sql);
     
     $surname = $_POST["surname"];
     $forename = $_POST["forename"];

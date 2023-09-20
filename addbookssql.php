@@ -26,7 +26,7 @@ try {
     $stmt->bindParam(':author', $author, PDO::PARAM_STR);
     $stmt->bindParam(':genre', $genre, PDO::PARAM_STR);
     $stmt->bindParam(':description', $description, PDO::PARAM_STR);
-    $stmt->bindParam(':length', $length, PDO::PARAM_INT);s
+    $stmt->bindParam(':length', $length, PDO::PARAM_INT);
     $stmt->bindParam(':rating', $rating, PDO::PARAM_INT);
     $stmt->bindParam(':in_library', $in_library, PDO::PARAM_INT);
     
