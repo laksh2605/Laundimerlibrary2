@@ -21,9 +21,10 @@
     <tr><td>Author:</td><td><input type="text" name="author"></td></tr>
     <tr><td>ISBN:</td><td><input type="number" name="ISBN"></td></tr>
     <tr><td>Email Address:</td><td><input type="text" name="User_Email"></td></tr>
-    <tr><td>Description:</td><td><input type="text" name="Notes"></td></tr>
+    <tr><td>Notes:</td><td><input type="text" name="Notes"></td></tr>
     <tr><td></td><td><input type="submit" value="Request New Books"></td></tr>
     </table>    
 </form>
 </body>
 </html>
+

@@ -3,9 +3,6 @@
 include_once("connection.php");
 
 try {
-    // $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    
-    // $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     $sql = "INSERT INTO tblrequests (ISBN, title, author, User_Email, Notes)
             VALUES (:isbn, :title, :author, :user_email, :notes)";
@@ -34,3 +31,7 @@ try {
 $dbh = null;
 
 ?>
+
+
+
+
