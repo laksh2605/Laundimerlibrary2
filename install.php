@@ -66,9 +66,8 @@
     
     $stmt7 = $conn->prepare("DROP TABLE IF EXISTS TblOrders;
     CREATE TABLE TblOrders
-    (UserID INT(6),
-    ISBN INT(6) UNSIGNED,
-    Title VARCHAR(50) NOT NULL, 
+    (UserID INT(4),
+    ISBN VARCHAR(13)NO NULL,
     Date_Ordered DATE,
     PRIMARY KEY(ISBN,UserID))");
     $stmt7->execute();
@@ -82,5 +81,5 @@
     Genre VARCHAR(50) NOT NULL)");
     $stmt8->execute();
     $stmt8->closeCursor(); 
-
+//add code to insert some basic date:
 ?>
