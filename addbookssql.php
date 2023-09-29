@@ -1,17 +1,14 @@
 <?php
-
+// Include the 'connection.php' file, which contains the database connection settings.
 include_once("connection.php");
 
 try {
-   // $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    
-    //$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
+    // Define an SQL query to insert a new record into the 'tblbooks' table.
     $sql = "INSERT INTO tblbooks (ISBN, Title, Author, Genre, Description, Length, Rating, In_Library) 
             VALUES (:isbn, :title, :author, :genre, :description, :length, :rating, :in_library)";
-    
-    $stmt = $conn->prepare($sql);
-    
+
+$stmt = $conn->prepare($sql);
+
     $isbn = $_POST["ISBN"];
     $title = $_POST["Title"];
     $author = $_POST["Author"];
@@ -21,6 +18,7 @@ try {
     $rating = $_POST["Rating"];
     $in_library = $_POST["In_Library"];
     
+    // Bind the variables to placeholders in the SQL query.
     $stmt->bindParam(':isbn', $isbn, PDO::PARAM_STR);
     $stmt->bindParam(':title', $title, PDO::PARAM_STR);
     $stmt->bindParam(':author', $author, PDO::PARAM_STR);
@@ -34,10 +32,10 @@ try {
         echo "Successful insertion";
     }
 } catch (PDOException $e) {
+    // Handle any exceptions that may occur during database operations and display an error message.
     echo "Error: " . $e->getMessage();
 }
 
+// Close the database connection.
 $dbh = null;
-
 ?>
-

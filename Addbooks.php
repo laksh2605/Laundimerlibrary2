@@ -22,7 +22,7 @@
                     Publish Date: <input type="date" name="Publish Date"/></br></br>
                     ISBN: <input type="number"  name="ISBN"/></br></br>
                     Publisher: <input type="text"  name="Publisher"/></br></br>
-                    <!-- Image: <input type="image"  name="Image"/></br></br> -->
+                    <!-- Image: <input type="image"  name="Image"/></br></br> --> 
                     Description: <input type="text"  name="Description"/></br></br>
                     Rating: <input type="text"  name="Rating"/></br></br>
                     In Library: <input type="text"  name="In_Library"/></br></br>

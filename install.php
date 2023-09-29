@@ -67,7 +67,7 @@
     $stmt7 = $conn->prepare("DROP TABLE IF EXISTS TblOrders;
     CREATE TABLE TblOrders
     (UserID INT(4),
-    ISBN VARCHAR(13)NO NULL,
+    ISBN VARCHAR(13),
     Date_Ordered DATE,
     PRIMARY KEY(ISBN,UserID))");
     $stmt7->execute();
