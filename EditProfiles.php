@@ -1,11 +1,3 @@
-<?php
-session_start(); 
-if (!isset($_SESSION['userid']))
-{   
-    $_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
-    header("Location:login.php");
-}
-?>
 <html>
 <head>
     <title>Edit Details</title>
@@ -16,13 +8,14 @@ if (!isset($_SESSION['userid']))
 <?php
 session_start();
 include_once("connection.php");
-
+$_SESSION["userid"]=1;
 if (isset($_SESSION['userid'])) {
     $stmt = $conn->prepare("SELECT * FROM tblusers WHERE UserID = :userid");
     $stmt->bindParam(':userid', $_SESSION['userid'], PDO::PARAM_INT);
     $stmt->execute();
 
-    if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    print_r($row);
         $forename = $row["Forename"];
         $surname = $row["Surname"];
         $username = $row["Username"];
@@ -31,6 +24,7 @@ if (isset($_SESSION['userid'])) {
         $userRole = $row["UserRole"];
     }
 }
+
 ?>
 
 <form action="editprofilessql.php" method="POST">
