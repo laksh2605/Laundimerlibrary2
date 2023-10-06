@@ -11,11 +11,11 @@ include_once("connection.php");
 $_SESSION["userid"]=1;
 if (isset($_SESSION['userid'])) {
     $stmt = $conn->prepare("SELECT * FROM tblusers WHERE UserID = :userid");
-    $stmt->bindParam(':userid', $_SESSION['userid'], PDO::PARAM_INT);
+    $stmt->bindParam(':userid', $_SESSION['loggedinuser'], PDO::PARAM_INT);
     $stmt->execute();
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    print_r($row);
+    // print_r($row);
         $forename = $row["Forename"];
         $surname = $row["Surname"];
         $username = $row["Username"];
