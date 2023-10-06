@@ -1,3 +1,10 @@
+<?php
+session_start(); 
+if (!isset($_SESSION['loggedinuser']))
+{   
+    header("Location:login.php");
+}
+?>
 <html>
     <head>
         <title>My Profile Page</title>

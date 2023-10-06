@@ -15,6 +15,7 @@ try {
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<br> Username : {$row['Username']}  <br> " . "--------------------------------<br>";
             $_SESSION['loggedinuser'] = $row['UserID'];
+            $_SESSION["username"]=$row["Forename"];
         }
     } else {
         echo "0 results";
@@ -24,4 +25,5 @@ try {
 }
 
 $dbh = null;
+header("Location: index.php");
 ?>
