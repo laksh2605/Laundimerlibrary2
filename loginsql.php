@@ -3,7 +3,7 @@ session_start();
 include_once("connection.php");
 
 $username = $_POST['username'];
-
+$password = $_POST['password'];
 try {
 
     $sql = "SELECT * FROM tblusers WHERE Username = :username";
@@ -15,15 +15,15 @@ try {
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<br> Username : {$row['Username']}  <br> " . "--------------------------------<br>";
             $_SESSION['loggedinuser'] = $row['UserID'];
-            $_SESSION["username"]=$row["Forename"];
+            $_SESSION["username"] = $row["Forename"];
         }
     } else {
         echo "0 results";
     }
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
+} finally {
+    $dbh = null;
+    header("Location: index.php");
 }
-
-$dbh = null;
-header("Location: index.php");
 ?>
