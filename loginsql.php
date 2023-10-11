@@ -14,8 +14,17 @@ try {
     if ($stmt->rowCount() > 0) {
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<br> Username : {$row['Username']}  <br> " . "--------------------------------<br>";
-            $_SESSION['loggedinuser'] = $row['UserID'];
-            $_SESSION["username"] = $row["Forename"];
+            $rowpassword = $row["Password"];
+            
+            if ($rowpassword == $password) {
+
+                $_SESSION['loggedinuser'] = $row['UserID'];
+                $_SESSION["username"] = $row["Forename"];
+                    
+            } else {
+                echo "Incorect Password";
+            }
+
         }
     } else {
         echo "0 results";
@@ -24,6 +33,8 @@ try {
     echo "Error: " . $e->getMessage();
 } finally {
     $dbh = null;
-    header("Location: index.php");
+    if (array_key_exists("loggedinuser", $_SESSION)) {
+        header("Location: index.php");
+    }
 }
 ?>
