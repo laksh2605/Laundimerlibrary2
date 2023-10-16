@@ -8,6 +8,7 @@
 <?php
 session_start();
 include_once("connection.php");
+// Assign a session user ID for demonstration purposes 
 $_SESSION["userid"]=1;
 if (isset($_SESSION['userid'])) {
     $stmt = $conn->prepare("SELECT * FROM tblusers WHERE UserID = :userid");
@@ -26,7 +27,7 @@ if (isset($_SESSION['userid'])) {
 }
 
 ?>
-
+<!-- HTML form to display and update user details -->
 <form action="editprofilessql.php" method="POST">
     Forename: <input type="text" name="forename" value="<?= htmlspecialchars($forename) ?>"><br>
     Surname: <input type="text" name="surname" value="<?= htmlspecialchars($surname) ?>"><br>
