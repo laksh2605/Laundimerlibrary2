@@ -7,6 +7,7 @@
     }
     //echo $_SESSION["loggedinuser"];
     ?>
+    <img src="ll.jpg">
             <button class="menubutton" onclick="document.location.href='index.php'">Homepage</button>
             <button class="menubutton" onclick="document.location.href='profile.php'">My Profile</button>
             <button class="menubutton" onclick="document.location.href='Addadmins.php'">Sign Up</button>
@@ -34,3 +35,5 @@
             <button class="menubutton" onclick="document.location.href='newrequests.php'">New Requests</button>
         </div>
 </html>
+
+
