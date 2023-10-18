@@ -8,6 +8,10 @@
                 font-size:18px;
                 margin-top: 40;
             }
+            form {
+                display: flex;
+                justify-content: center;
+            }
         </style>
 </head>
 <body>
