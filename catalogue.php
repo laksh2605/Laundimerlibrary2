@@ -10,6 +10,7 @@
             <th>Book Title: </th>
             <th>Author: </th>
             <th>ISBN: </th>
+            <th>In Library: </th>
         </tr>
         <?php
             // Include the database connection file
@@ -25,6 +26,8 @@
                     echo "<td>" . $row['Title'] . "</td>";
                     echo "<td>" . $row['Author'] . "</td>";
                     echo "<td>" . $row['ISBN'] . "</td>";
+                    echo "<td>" . $row['In_Library'] . "</td>";
+
                     echo "</tr>";
                 }
             } catch (PDOException $e) {
