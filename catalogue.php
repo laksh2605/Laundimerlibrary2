@@ -2,8 +2,17 @@
 <html>
 <head>
     <title>Library Catalogue</title>
+    <link rel="stylesheet" href="header.css">
+        <style>
+            .signupform{
+                text-align:center;
+                font-size:18px;
+                margin-top: 40;
+            }
+        </style>
 </head>
 <body>
+<?php require 'navbar.php'; ?>
     <h1>Library Catalogue</h1>
 
     <!-- Search Form -->
@@ -59,6 +68,7 @@
                 <th>Book Title: </th>
                 <th>Author: </th>
                 <th>ISBN: </th>
+                <th>Genre: </th>
                 <th>In Library: </th>
               </tr>';
 
@@ -67,6 +77,7 @@
             echo '<td>' . $row['Title'] . '</td>';
             echo '<td>' . $row['Author'] . '</td>';
             echo '<td>' . $row['ISBN'] . '</td>';
+            echo '<td>' . $row['Genre'] . '</td>';
             echo '<td>' . $row['In_Library'] . '</td>';
             echo '</tr>';
         }
