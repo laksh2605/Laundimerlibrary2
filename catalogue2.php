@@ -20,10 +20,10 @@
     if (isset($_POST['searchTitle'])) {
         $searchTitle = $_POST['searchTitle'];
 
-        $searchTitleWildcard = '%' . $searchTitle . '%';
+        $searchTitleValue = '%' . $searchTitle . '%';
 
         $searchTitleQuery = $conn->prepare("SELECT * FROM TblBooks WHERE Title LIKE :searchTitle");
-        $searchTitleQuery->bindParam(':searchTitle', $searchTitleWildcard, PDO::PARAM_STR);
+        $searchTitleQuery->bindParam(':searchTitle', $searchTitleValue, PDO::PARAM_STR);
         $searchTitleQuery->execute();
 
         echo '<h2>Search Results</h2>';
