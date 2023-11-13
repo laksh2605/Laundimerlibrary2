@@ -1,6 +1,6 @@
 <?php
 include_once("connection.php");
-
+print_r($_POST);
 // Handle form submission
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($_POST["submit"])) {

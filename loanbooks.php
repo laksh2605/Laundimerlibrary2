@@ -3,7 +3,7 @@ include_once("connection.php");
 
 // Fetch available books from TblBooks
 try {
-    $stmt = $conn->query("SELECT DISTINCT title FROM TblBooks");
+    $stmt = $conn->query("SELECT DISTINCT title,ISBN FROM TblBooks");
 
     if (!$stmt) {
         die("Error fetching books: " . $conn->errorInfo()[2]);
@@ -27,7 +27,7 @@ try {
         <label for="book_title">Select Book Title:</label>
         <select name="book_title" required>
             <?php foreach ($titles as $title): ?>
-                <option value="<?php echo $title; ?>"><?php echo $title; ?></option>
+                <option value="<?php echo $ISBN; ?>"><?php echo $title; ?></option>
             <?php endforeach; ?>
         </select><br>
 

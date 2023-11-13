@@ -32,7 +32,6 @@
     include 'connection.php';
 
     try {
-        // Build the SQL query based on user input
         $query = "SELECT * FROM TblBooks WHERE 1";
 
         // Check if title is provided for search
