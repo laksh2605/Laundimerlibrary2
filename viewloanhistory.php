@@ -3,19 +3,32 @@
     <title>View Loan History</title>
 </head>
 <body>
-    
+
     <h1> Add New Loan</h1>
-<form action='viewloanhistorysql.php' method="POST">
-    UserID:<input type="number" name="UserID"><br>
-    ISBN:<input type="number" name="ISBN"><br>
-    Date_Borrowed:<input type="date" name="date_borrowed"><br>
-    Date_Returned:<input type="date" name="date_returned"><br>
-    Review:<input type="text" name="review"><br>
-    Rating:<input type="number" name="rating"><br>
-    Late_Fines:<input type="number" name="late_fines"><br>
-    <input type="submit" value="Add new Book"><br>
-</form>
+
+    <form action='viewloanhistorysql.php' method="POST">
+        UserID: <input type="number" name="UserID"><br>
+
+        <!-- Dropdown list for books -->
+        Book:
+        <select name="ISBN">
+            <?php
+            include_once("connection.php");
+
+            // Fetch books from TblBooks
+            $query = "SELECT ISBN, Title FROM TblBooks";
+            $result = $conn->query($query);
+
+                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                    echo "<option value='".$row['ISBN']."'>".$row['Title']."</option>";
+                }
+            ?>
+        </select><br>
+
+        Date_Borrowed: <input type="date" name="date_borrowed"><br>
+        Date_Returned: <input type="date" name="date_returned"><br>
+
+        <input type="submit" value="Add new Book"><br>
+    </form>
 </body>
 </html>
-
-

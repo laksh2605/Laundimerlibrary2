@@ -1,22 +1,23 @@
 <?php
-include_once("connection.php");
+include_once("connection.php"); // Include your connection settings
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $sql = "INSERT INTO tblloans (UserID, ISBN, Date_Borrowed, Date_Returned, Review, Rating, Late_Fines) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO tblloans (UserID, ISBN, Date_Borrowed, Date_Returned) VALUES (:UserID, :ISBN, :Date_Borrowed, :Date_Returned)";
 
     $stmt = $conn->prepare($sql);
 
-    // Assuming $_POST["UserID"], $_POST["ISBN"], $_POST["Date_Borrowed"], $_POST["Date_Returned"], $_POST["Review"], $_POST["Rating"], $_POST["Late_Fines"] are the form input values.
-
-    $stmt->bind_param('sssssss', $_POST["UserID"], $_POST["ISBN"], $_POST["Date_Borrowed"], $_POST["Date_Returned"], $_POST["Review"], $_POST["Rating"], $_POST["Late_Fines"]);
+    $stmt->bindParam(':UserID', $_POST["UserID"]);
+    $stmt->bindParam(':ISBN', $_POST["ISBN"]);
+    $stmt->bindParam(':Date_Borrowed', $_POST["Date_Borrowed"]);
+    $stmt->bindParam(':Date_Returned', $_POST["Date_Returned"]);
 
     if ($stmt->execute()) {
         echo "New record created successfully";
     } else {
-        echo "Error: " . $stmt->error;
+        echo "Error: " . $stmt->errorInfo()[2]; // Display detailed error information
     }
 
-    $stmt->close();
-    $conn->close();
+    $stmt->closeCursor();
 }
 ?>
+
