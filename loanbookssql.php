@@ -1,24 +1,23 @@
 <?php
-include_once("connection.php");
-print_r($_POST);
-// Handle form submission
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    if (isset($_POST["submit"])) {
-        $bookTitle = $_POST["book_title"];
+include_once("connection.php"); // Include your connection settings
 
-        // Insert loan information into TblLoans
-        $stmt = $conn->prepare("INSERT INTO TblLoans (UserID, ISBN, date_borrowed)
-                                SELECT 1, ISBN, NOW()
-                                FROM TblBooks
-                                WHERE title = :title");
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $sql = "INSERT INTO tblloans (UserID, ISBN, Date_Borrowed, Date_Returned) VALUES (:UserID, :ISBN, :Date_Borrowed, :Date_Returned)";
 
-        $stmt->bindParam(':title', $bookTitle, PDO::PARAM_STR);
+    $stmt = $conn->prepare($sql);
 
-        if ($stmt->execute()) {
-            echo "Book '$bookTitle' loaned successfully!";
-        } else {
-            echo "Error loaning out the book.";
-        }
+    $stmt->bindParam(':UserID', $_POST["UserID"]);
+    $stmt->bindParam(':ISBN', $_POST["ISBN"]);
+    $stmt->bindParam(':Date_Borrowed', $_POST["Date_Borrowed"]);
+    $stmt->bindParam(':Date_Returned', $_POST["Date_Returned"]);
+
+    if ($stmt->execute()) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $stmt->errorInfo()[2]; // Display detailed error information
     }
+
+    $stmt->closeCursor();
 }
 ?>
+
