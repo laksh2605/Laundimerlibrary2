@@ -43,7 +43,7 @@
         Date_Borrowed: <input type="date" name="Date_Borrowed"><br>
         Date_Returned: <input type="date" name="Date_Returned"><br>
 
-        <input type="submit" value="Add new Book"><br>
+        <input type="submit" value="Add new Loan"><br>
     </form>
 </body>
 </html>
