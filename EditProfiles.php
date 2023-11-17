@@ -1,12 +1,22 @@
 <html>
 <head>
     <title>Edit Details</title>
-</head>
-<body>
+    <link rel="stylesheet" href="header.css">
+        <style>
+            .signupform{
+                text-align:center;
+                font-size:18px;
+                margin-top: 40;
+            }
+        </style>
+    </head>
+    <body>
+      <?php require 'navbar.php'; ?>
+
 <h1>Edit Details</h1>
 
 <?php
-session_start();
+
 include_once("connection.php");
 // Assign a session user ID for demonstration purposes 
 $_SESSION["userid"]=1;

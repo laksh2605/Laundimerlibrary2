@@ -3,16 +3,9 @@
 <head>
     <title>Library Catalogue</title>
     <link rel="stylesheet" href="header.css">
-        <style>
-            .signupform{
-                text-align:center;
-                font-size:18px;
-                margin-top: 40;
-            }
-        </style>
-</head>
-<body>
-<?php require 'navbar.php'; ?>
+    </head>
+    <body>
+      <?php require 'navbar.php'; ?>
     <h1>Library Catalogue</h1>
 
     <!-- Search Form -->
