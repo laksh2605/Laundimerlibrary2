@@ -27,15 +27,21 @@ try {
                     <th><td>Reviews: </td><td><?php echo $row["reviews"]?></td></th>
                 </tr>
             </table>
+            <br><br><a href="index.php"><button>Return to Homepage</button></a>
+
             <?php
         }
     } else {
         // If no results were found, display "0 results."
         echo "0 results";
+        echo '<br><br><a href="index.php"><button>Return to Homepage</button></a>';
+
     }
 } catch (PDOException $e) {
     // Handle any exceptions that may occur during database operations and display an error message.
     echo "Error: " . $e->getMessage();
+    echo '<br><br><a href="index.php"><button>Return to Homepage</button></a>';
+
 }
 
 $dbh = null;

@@ -27,12 +27,15 @@ try {
         // Update success message based on UserRole
         $roleDescription = ($userRole == 1) ? 'Admin' : 'Normal User';
         echo "New record created successfully. User Role: $roleDescription";
+        echo '<br><br><a href="index.php"><button>Return to Homepage</button></a>';
     } else {
         // If an error occurs during execution, display the error message.
         echo "Error: " . $stmt->errorInfo()[2];
     }
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
+    echo '<br><br><a href="index.php"><button>Return to Homepage</button></a>';
+
 } finally {
     $conn = null;
 }

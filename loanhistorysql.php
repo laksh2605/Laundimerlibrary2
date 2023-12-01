@@ -26,9 +26,13 @@ try {
         }
     } else {
         echo "0 results";
+        echo '<br><br><a href="index.php"><button>Return to Homepage</button></a>';
+
     }
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
+    echo '<br><br><a href="index.php"><button>Return to Homepage</button></a>';
+
 }
 
 $dbh = null;

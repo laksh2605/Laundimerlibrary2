@@ -30,12 +30,17 @@ $stmt = $conn->prepare($sql);
     
     if ($stmt->execute()) {
         echo "Successful insertion";
+        echo '<br><br><a href="index.php"><button>Return to Homepage</button></a>';
     }
 } catch (PDOException $e) {
     // Handle any exceptions that may occur during database operations and display an error message.
     echo "Error: " . $e->getMessage();
+    echo '<br><br><a href="index.php"><button>Return to Homepage</button></a>';
+
 }
 
 // Close the database connection.
 $dbh = null;
 ?>
+
+
