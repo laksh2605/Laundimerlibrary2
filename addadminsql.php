@@ -24,13 +24,16 @@ try {
     
     // Execute the prepared SQL query and check if it was successful.
     if ($stmt->execute()) {
-        echo "New record created successfully";
+        // Update success message based on UserRole
+        $roleDescription = ($userRole == 1) ? 'Admin' : 'Normal User';
+        echo "New record created successfully. User Role: $roleDescription";
     } else {
         // If an error occurs during execution, display the error message.
         echo "Error: " . $stmt->errorInfo()[2];
     }
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
+} finally {
+    $conn = null;
 }
-$dbh = null;
 ?>

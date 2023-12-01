@@ -26,7 +26,7 @@
             <?php
             if (isset($_SESSION["loggedinuser"])){
                 $inout='<button class="menubutton" onclick="document.location.href=';
-                $inoutend='">logout</button>';
+                $inoutend='">Logout</button>';
                 
                 echo($inout."'logout.php'".$inoutend);
             }else{
