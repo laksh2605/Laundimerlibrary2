@@ -19,13 +19,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($updateStmt->execute()) {
             echo "New record created successfully.";
+            echo '<br><br><a href="index.php"><button>Return to Homepage</button></a>';
         } else {
             echo "Error updating book status: " . $updateStmt->errorInfo()[2];
+            echo '<br><br><a href="index.php"><button>Return to Homepage</button></a>';
+
         }
 
         $updateStmt->closeCursor();
     } else {
         echo "Error: " . $stmt->errorInfo()[2];
+        echo '<br><br><a href="index.php"><button>Return to Homepage</button></a>';
+
     }
 
     $stmt->closeCursor();

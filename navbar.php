@@ -18,10 +18,17 @@
     if (isset($_SESSION["loggedinuser"])){
         echo ("Hi ".$_SESSION["username"]);
     }
-    //echo $_SESSION["loggedinuser"];
+    
     ?>
             <button class="menubutton" onclick="document.location.href='index.php'">Homepage</button>
-            <button class="menubutton" onclick="document.location.href='profile.php'">My Profile</button>
+            <?php if (isset($_SESSION["loggedinuser"])){
+                $inout='<button class="menubutton" onclick="document.location.href=';
+                $inoutend='">My Profile</button>';
+                
+                echo($inout."'profile.php'".$inoutend);
+               
+        }
+            ?>
             <button class="menubutton" onclick="document.location.href='Addadmins.php'">Sign Up</button>
             <?php
             if (isset($_SESSION["loggedinuser"])){
