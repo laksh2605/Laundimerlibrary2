@@ -3,9 +3,6 @@
 include_once("connection.php");
 
 try {
-    $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // Sanitize user input (you can use htmlspecialchars for display purposes)
     $searchfor = htmlspecialchars($_POST['searchfor']);
@@ -16,7 +13,7 @@ try {
             INNER JOIN TblUsers ON TblUsers.UserID = TblLoans.UserID 
             WHERE TblLoans.UserID = :searchfor";
     
-    $stmt = $dbh->prepare($sql);
+    $stmt = $conn->prepare($sql);
     $stmt->bindParam(':searchfor', $searchfor, PDO::PARAM_INT);
     $stmt->execute();
     
