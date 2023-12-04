@@ -1,6 +1,4 @@
 <?php
-
-// Include the 'connection.php' file, which contains the database connection settings.
 include_once("connection.php");
 
 try {
@@ -34,10 +32,14 @@ try {
     } else {
     // If no results were found, display "0 results."
         echo "0 results";
+        echo '<br><br><a href="Orders.php"><button>Return to Orders</button></a>';
+
     }
 } catch (PDOException $e) {
 // Handle any exceptions that may occur during database operations and display an error message.
     echo "Error: " . $e->getMessage();
+    echo '<br><br><a href="Orders.php"><button>Return to Orders</button></a>';
+
 }
 
 $dbh = null;
