@@ -31,7 +31,7 @@
             <?php
             include_once("connection.php");
 
-            $query = "SELECT ISBN, Title FROM TblBooks";
+            $query = "SELECT ISBN, Title FROM TblBooks WHERE In_Library='Y'";
             $result = $conn->query($query);
 
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
@@ -40,8 +40,8 @@
             ?>
         </select><br>
 
-        Date_Borrowed: <input type="date" name="Date_Borrowed"><br>
-        Date_Returned: <input type="date" name="Date_Returned"><br>
+        Date Borrowed: <input type="hidden" name="Date_Borrowed" value="<?php echo date('Y-m-d'); ?>"><br>
+        Date Returned: <input type="hidden" name="Date_Returned" value="<?php echo date('Y-m-d', strtotime('+3 weeks')); ?>"><br>
 
         <input type="submit" value="Add new Loan"><br>
     </form>
