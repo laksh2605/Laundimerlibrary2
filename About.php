@@ -14,7 +14,6 @@
 <?php require 'navbar.php'; ?>
     <h1>About</h1>
     <p>
-
     <h2>Opening Times: </h2>
     Monday: 08:00-21:00<br>
     Tuesday: 08:00-21:00<br>
