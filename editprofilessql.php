@@ -6,7 +6,6 @@
 include_once("connection.php");
 
 try {
-    // Start a session
     session_start();
         
     if (!empty($_POST)) {
@@ -22,7 +21,6 @@ try {
         $stmt->bindParam(':userrole', $_POST['UserRole'], PDO::PARAM_STR);
         $stmt->bindParam(':userid',  $_SESSION['loggedinuser'], PDO::PARAM_INT);
         
-        // Execute the SQL statement
         if ($stmt->execute()) {
             echo "User information updated successfully";
         } else {
