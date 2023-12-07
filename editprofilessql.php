@@ -8,9 +8,7 @@ include_once("connection.php");
 try {
     // Start a session
     session_start();
-    
-    print_r($_POST);
-    
+        
     if (!empty($_POST)) {
         // Prepare an SQL statement to update user information
         $stmt = $conn->prepare("UPDATE tblusers SET Forename=:forename, Surname=:surname, Username=:username, Password=:password, Email_Address=:emailaddress, UserRole=:userrole WHERE UserID=:userid");
