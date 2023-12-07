@@ -1,3 +1,7 @@
+<body>
+<?php require 'navbar.php'; ?>
+<div class="signupform">
+</body>
 <?php
 include_once("connection.php");
 
@@ -16,14 +20,12 @@ try {
     if ($stmt->rowCount() > 0) {
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             ?>
-            <form action='CancelOrder.php' method='POST'>
                 <table>
                     <tr>
                         <th><td>Title: </td><td><?php echo $row["Title"] ?></td></th>
                         <th><td>Author: </td><td><?php echo $row["Author"] ?></td></th>
                         <th><td>UserID: </td><td><?php echo $row["UserID"] ?></td></th>
                         <th><td></td></th>
-                        <th><td><input type="submit" value="Cancel Order"></td></th>
                     </tr>
                 </table>
             </form>
@@ -39,9 +41,6 @@ try {
 // Handle any exceptions that may occur during database operations and display an error message.
     echo "Error: " . $e->getMessage();
     echo '<br><br><a href="Orders.php"><button>Return to Orders</button></a>';
-
 }
-
 $dbh = null;
-
 ?>

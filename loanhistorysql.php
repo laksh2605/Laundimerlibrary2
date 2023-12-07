@@ -1,3 +1,7 @@
+<body>
+<?php require 'navbar.php'; ?>
+<div class="signupform">
+</body>
 <?php
 
 include_once("connection.php");

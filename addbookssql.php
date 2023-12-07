@@ -1,3 +1,7 @@
+<body>
+<?php require 'navbar.php'; ?>
+<div class="signupform">
+</body>
 <?php
 // Include the 'connection.php' file, which contains the database connection settings.
 include_once("connection.php");
