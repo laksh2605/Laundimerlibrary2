@@ -40,8 +40,8 @@
             ?>
         </select><br>
 
-        Date Borrowed: <input type="hidden" name="Date_Borrowed" value="<?php echo date('Y-m-d'); ?>"><br>
-        Date Returned: <input type="hidden" name="Date_Returned" value="<?php echo date('Y-m-d', strtotime('+3 weeks')); ?>"><br>
+ <input type="hidden" name="Date_Borrowed" value="<?php echo date('Y-m-d'); ?>"><br>
+ <input type="hidden" name="Date_Returned" value="<?php echo date('Y-m-d', strtotime('+3 weeks')); ?>"><br>
 
         <input type="submit" value="Add new Loan"><br>
     </form>
