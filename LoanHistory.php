@@ -24,7 +24,7 @@ if (!isset($_SESSION["loggedinuser"]) || $_SESSION["UserRole"] != 1) {
 
 <form action = 'loanhistorysql.php' method = "POST">
     <table>
-        <tr>Search User ID, Username or Surname:<td><input type="text" name="searchfor"></tr>
+        <tr>Search User ID or Username:<td><input type="text" name="searchfor"></tr>
         <input type ="submit" value = "Search"><br>
     </table>
 </form>
