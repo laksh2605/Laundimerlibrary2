@@ -23,12 +23,7 @@
 
         <button class="profilebuttoncss" onclick="document.location.href='viewreviews.php'">View Reviews</button>
 
-        <button class="profilebuttoncss" onclick="document.location.href='Fines.php'">Fines</button>
-
-        <button class="profilebuttoncss" onclick="document.location.href='Orders.php'">Orders</button>
-    
-
-    <h2>Recommend</h2>
+        <button class="profilebuttoncss" onclick="document.location.href='Orders.php'">Loans by title</button>
 
 </body>
 </html>
