@@ -6,8 +6,7 @@
 include_once("connection.php");
 
 try {
-    // Define an SQL query to retrieve ratings, ISBNs, UserIDs, and reviews based on a specific UserID.
-    $sql = "SELECT tblreviews.Rating as rate, tblbooks.ISBN as isbn, tblreviews.UserID as userid, tblreviews.reviews 
+    $sql = "SELECT tblreviews.Rating as rate, tblbooks.ISBN as isbn, tblreviews.UserID as userid, tblreviews.reviews, tblbooks.Title as title
             FROM tblreviews INNER JOIN tblbooks ON tblbooks.ISBN = tblreviews.ISBN 
             WHERE UserID = :userID";
 
@@ -22,9 +21,9 @@ try {
     if ($stmt->rowCount() > 0) {
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             ?>
-            <!-- Generate an HTML table to display the retrieved data. -->
             <table>
                 <tr>
+                    <th><td>Title: </td><td><?php echo $row["title"]?></td></th>
                     <th><td>ISBN: </td><td><?php echo $row["isbn"]?></td></th>
                     <th><td>User Id: </td><td><?php echo $row["userid"]?></td></th>
                     <th><td>Rating: </td><td><?php echo $row["rate"]?></td></th>
