@@ -1,28 +1,38 @@
 <?php
-
 include_once("connection.php");
 
 try {
-    // Retrieve data from the form
-    $ISBN = htmlspecialchars($_POST['ISBN']);
-    $UserID = htmlspecialchars($_POST['UserID']);
-    $Rating = htmlspecialchars($_POST['Rating']);
-    $Reviews = htmlspecialchars($_POST['Reviews']);
+    // Check if ISBN is set in $_POST
+    if (isset($_POST['isbn'])) {
+        // Retrieve the ISBN from the form
+        $isbn = htmlspecialchars($_POST['isbn']);
 
-    // Insert the review into tblreviews
-    $sql = "INSERT INTO tblreviews (UserID, ISBN, Rating, Reviews) VALUES (:UserID, :ISBN, :Rating, :Reviews)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':UserID', $UserID, PDO::PARAM_INT);
-    $stmt->bindParam(':ISBN', $isbn, PDO::PARAM_STR);
-    $stmt->bindParam(':Rating', $Rating, PDO::PARAM_INT);
-    $stmt->bindParam(':Reviews', $Reviews, PDO::PARAM_STR);
-    $stmt->execute();
+        // Retrieve other data from the form
+        $UserID = htmlspecialchars($_POST['UserID']);
+        $Rating = htmlspecialchars($_POST['Rating']);
+        $Reviews = htmlspecialchars($_POST['Reviews']);
 
-    echo "Review submitted successfully";
+        // Insert the review into tblreviews
+        $sql = "INSERT INTO tblreviews (ISBN, UserID, Rating, Reviews) VALUES (:ISBN, :UserID, :Rating, :Reviews)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':UserID', $UserID, PDO::PARAM_INT);
+        $stmt->bindParam(':ISBN', $isbn, PDO::PARAM_STR);
+        $stmt->bindParam(':Rating', $Rating, PDO::PARAM_INT);
+        $stmt->bindParam(':Reviews', $Reviews, PDO::PARAM_STR);
+        $stmt->execute();
+
+        echo "Review submitted successfully";
+        echo '<br><br><a href="loanhistory.php"><button>Return to Loan History</button></a>';
+
+
+    } else {
+        // Handle the case where 'ISBN' is not set
+        echo "Error: ISBN is not set in the form.";
+    }
 } catch (PDOException $e) {
-    // Handle errors
     echo "Error: " . $e->getMessage();
 } finally {
     $conn = null;
 }
 ?>
+

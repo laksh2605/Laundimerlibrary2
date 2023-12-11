@@ -3,11 +3,9 @@
     <div class="signupform">
 
     <?php
-
     include_once("connection.php");
 
     try {
-        
         // Sanitize user input (you can use htmlspecialchars for display purposes)
         $searchfor = htmlspecialchars($_POST['searchfor']);
 
@@ -34,13 +32,12 @@
 
                     <!-- Review Form -->
                     <form action='submitreview.php' method='POST'>
-                    <input type='hidden' name='ISBN' value='" . $row['ISBN'] . "'> 
+                    <input type='hidden' name='isbn' value='" . $row['ISBN'] . "'> 
                     <input type='hidden' name='UserID' value='" . $row['UserID'] . "'>
                     Rating: <input type='number' name='Rating' min='1' max='5' required> 
                     Review: <textarea name='Reviews' required></textarea> 
                     <input type='submit' value='Submit Review'>
                 </form>
-
                 </li>";
             }
             echo "</ol>";
@@ -57,3 +54,4 @@
 
     ?>
 </body>
+
