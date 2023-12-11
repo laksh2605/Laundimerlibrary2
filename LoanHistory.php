@@ -1,11 +1,5 @@
 <?php
 session_start();
-
-if (!isset($_SESSION["loggedinuser"]) || $_SESSION["UserRole"] != 1) {
-    echo "This page is only for Admins. Please return to the Homepage or Login as an Admin. Thank you";
-    echo '<br><br><a href="index.php"><button>Return to Homepage</button></a>';
-    exit();
-}
 ?>
 <head>
     <title>Loan History</title>
