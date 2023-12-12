@@ -25,6 +25,9 @@
 
         <button class="profilebuttoncss" onclick="document.location.href='Orders.php'">Loans by title</button>
 
+        <button class="profilebuttoncss" onclick="document.location.href='viewnewrequests.php'">View New Book Requests</button>
+
+
 </body>
 </html>
 

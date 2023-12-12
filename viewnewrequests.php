@@ -1,4 +1,5 @@
 <body>
+<title>View New Requests</title>
 <?php require 'navbar.php'; ?>
 <div class="signupform">
 </body>
