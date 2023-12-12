@@ -3,10 +3,17 @@
 <div class="signupform">
 </body>
 <?php
+
+if (!isset($_SESSION["loggedinuser"]) || $_SESSION["UserRole"] != 1) {
+    echo "This page is only for Admins. Please return to the Homepage or Login as an Admin. Thank you";
+    echo '<br><br><a href="index.php"><button>Return to Homepage</button></a>';
+    exit();
+}
+
         include_once("connection.php");
 
         try {
-            // Define an SQL query to retrieve all records from the 'tblrequests' table.
+            // SQL to retrieve everything from the table.
             $sql = "SELECT * FROM tblrequests";
             $stmt = $conn->query($sql);
             // Check if there are any requests.
@@ -36,3 +43,4 @@
     </div>
 </body>
 </html>
+
