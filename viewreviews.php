@@ -25,8 +25,8 @@ if (!isset($_SESSION["loggedinuser"]) || $_SESSION["UserRole"] != 1) {
         <div>
             <div class="signupform">
 <h1>View Reviews</h1>
-<form action="viewreviewssql.php" method="POST"> 
-UserID: <input type="text" name="UserID"/></br></br>
+<form action="viewreviewssql.php" method="POST">
+Book Title: <input type="text" name="title"/><br/><br/>
 <input type="submit" value="View Reviews"/>
 </form>
 </body>
