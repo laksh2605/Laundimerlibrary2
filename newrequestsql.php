@@ -4,11 +4,11 @@
 </body>
 <?php
 include_once("connection.php");
-
+print_r($_POST);
 try {
     // Define an SQL query to insert a new record into the 'tblrequests' table.
-    $sql = "INSERT INTO tblrequests (title, author, User_Email, Notes)
-            VALUES (:title, :author, :user_email, :notes)";
+    $sql = "INSERT INTO tblrequests (RequestID, title, author, User_Email, Notes)
+            VALUES (NULL, :title, :author, :user_email, :notes)";
 
     $stmt = $conn->prepare($sql);
 

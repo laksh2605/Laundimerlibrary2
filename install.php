@@ -52,11 +52,11 @@
     Rating INT(3) NOT NULL, 
     Reviews VARCHAR(2000) NOT NULL)");
     $stmt5->execute();
-    $stmt5->closeCursor();
+    $stmt5->closeCursor(); 
 
     $stmt6 = $conn->prepare("DROP TABLE IF EXISTS TblRequests;
     CREATE TABLE TblRequests
-    (ISBN VARCHAR(13) PRIMARY KEY,
+    (RequestID INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     Title VARCHAR(50) NOT NULL,
     Author VARCHAR(50) NOT NULL, 
     User_Email VARCHAR(50) NOT NULL,
