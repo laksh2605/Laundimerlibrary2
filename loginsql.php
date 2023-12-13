@@ -1,5 +1,8 @@
+<body>
+<?php require 'navbar.php'; ?>
+<div class="signupform">
+</body>
 <?php
-session_start();
 include_once("connection.php");
 
 $username = $_POST['username'];
@@ -24,9 +27,11 @@ try {
             exit();
         } else {
             echo "Incorrect Password";
+            echo '<br><br><a href="index.php"><button>Return to Homepage</button></a>';
         }
     } else {
         echo "User not found";
+        echo '<br><br><a href="index.php"><button>Return to Homepage</button></a>';
     }
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
@@ -34,3 +39,5 @@ try {
     $conn = null;
 }
 ?>
+
+
