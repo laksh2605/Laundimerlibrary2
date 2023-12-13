@@ -22,7 +22,11 @@
                     Username: <input type="text" name="username"/></br></br>
                     Password: <input type="password" name="password"/></br></br>
                     Email Address: <input type="text" name="Email_Address"/></br></br>
-                    UserRole: <input type="text"  name="UserRole"/></br></br>
+                    UserRole:                     
+                    <select name="UserRole">
+                    <option value="0">Normal User</option>
+                    <option value="1">Admin</option>
+                    </select><br><br>
                     <input type="submit" value="Sign Up"/>
                 </form>
             </div>
