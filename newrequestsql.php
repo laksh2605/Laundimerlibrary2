@@ -4,7 +4,6 @@
 </body>
 <?php
 include_once("connection.php");
-print_r($_POST);
 try {
     // Define an SQL query to insert a new record into the 'tblrequests' table.
     $sql = "INSERT INTO tblrequests (RequestID, title, author, User_Email, Notes)
