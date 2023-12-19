@@ -28,6 +28,8 @@ try {
 
     if ($stmt->execute()) {
         echo "New record created successfully";
+        echo '<br><br><a href="index.php"><button>Return to Homepage</button></a>';
+
     } else {
         echo "Error: " . $stmt->errorInfo()[2];
     }

@@ -32,6 +32,8 @@ if (!isset($_SESSION["loggedinuser"]) || $_SESSION["UserRole"] != 1) {
                 echo '</table>';
             } else {
                 echo 'No requests found.';
+                echo '<br><br><a href="index.php"><button>Return to Homepage</button></a>';
+
             }
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
