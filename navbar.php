@@ -21,7 +21,8 @@
         
         ?>
         <button class="menubutton" onclick="document.location.href='index.php'">Homepage</button>
-        
+        <button class="menubutton" onclick="document.location.href='profile.php'">My Profile</button>
+
         <?php
         // Check if a user is logged in and has the Admin role
         if (isset($_SESSION["loggedinuser"]) && $_SESSION["UserRole"] == 1) {
