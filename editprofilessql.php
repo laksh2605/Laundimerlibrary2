@@ -6,7 +6,7 @@
 include_once("connection.php");
 
 try {
-    session_start();
+    // session_start();
         
     if (!empty($_POST)) {
         // Prepare an SQL statement to update user information
