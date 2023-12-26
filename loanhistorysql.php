@@ -42,7 +42,7 @@
             }
             echo "</ol>";
         } else {
-            echo "0 results";
+            echo "No results were found for the provided User ID.";
             echo '<br><br><a href="index.php"><button>Return to Homepage</button></a>';
         }
     } catch (PDOException $e) {
