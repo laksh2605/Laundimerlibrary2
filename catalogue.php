@@ -17,6 +17,9 @@
         <label for="searchAuthor">Author: </label>
         <input type="text" name="searchAuthor" id="searchAuthor" placeholder="Enter Author Name">
 
+        <label for="searchGenre">Genre: </label>
+        <input type="text" name="searchGenre" id="searchGenre" placeholder="Enter Genre">
+
         <input type="submit" value="Search">
     </form>
 
@@ -39,6 +42,13 @@
             $query .= " AND Author LIKE :searchAuthor";
         }
 
+
+        // Check if genre is provided for search
+        if (isset($_POST['searchGenre']) && !empty($_POST['searchGenre'])) {
+            $searchGenre = $_POST['searchGenre'];
+            $query .= " AND Genre LIKE :searchGenre";
+        }
+
         // Prepare and execute the SQL query
         $searchQuery = $conn->prepare($query);
 
@@ -50,6 +60,11 @@
         if (isset($searchAuthor)) {
             $searchAuthorValue = '%' . $searchAuthor . '%';
             $searchQuery->bindParam(':searchAuthor', $searchAuthorValue, PDO::PARAM_STR);
+        }
+
+        if (isset($searchGenre)) {
+            $searchGenreValue = '%' . $searchGenre . '%';
+            $searchQuery->bindParam(':searchGenre', $searchGenreValue, PDO::PARAM_STR);
         }
 
         $searchQuery->execute();
