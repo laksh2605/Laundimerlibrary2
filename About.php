@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>About></title>
+    <title>About</title>
     <link rel="stylesheet" href="header.css">
         <style>
             .signupform{
@@ -25,5 +25,13 @@
     <br>
     Laundimer House Library is a independently managed library which is managed by the House Master and Matron. It is provided with a variety of books with all sorts of genres. 
 </p>
+
+<div style="text-align: center;">
+    <h4>This Laundimer Library Catalogue was created by <a href="https://github.com/laksh2605">Laksh Aggarwal '24</a>.</h4>
+</div>
+
+
+
 </body>
 </html>
+
