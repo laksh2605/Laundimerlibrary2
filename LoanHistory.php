@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <head>
     <title>Loan History</title>
     <link rel="stylesheet" href="header.css">
